@@ -1,4 +1,5 @@
 import { fetchUsers } from "../../../actions/userAction_43";
+import DeleteButton_43 from "./DeleteButton_43";
 
 const UserList_43 = async () => {
   const users = await fetchUsers();
@@ -6,7 +7,10 @@ const UserList_43 = async () => {
   return (
     <ul>
       {users.map((user) => (
-        <li key={user.id}>{user.email}</li>
+        <li key={user.id}>
+          {user.email}
+          <DeleteButton_43 id={user.id} />
+        </li>
       ))}
     </ul>
   );
