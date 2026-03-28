@@ -1,4 +1,4 @@
-import { fetchUsers } from "@/actions/userAction_43";
+import { fetchUsers } from "../../../actions/userAction_43";
 
 const UserList_43 = async () => {
   const users = await fetchUsers();
