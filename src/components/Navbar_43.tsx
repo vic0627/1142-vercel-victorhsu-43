@@ -8,6 +8,7 @@ const Navbar_43 = () => {
             <Link href="/tours_43">Tours_43</Link>
             <Link href="/actions_43">Actions_43</Link>
             <Link href="/users_db_43">Users_db_43</Link>
+            <Link href="/grocery_43">Grocery_43</Link>
         </nav>
     )
 }
