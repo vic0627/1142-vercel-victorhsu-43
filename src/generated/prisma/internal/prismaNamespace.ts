@@ -385,7 +385,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  Post: 'Post'
+  Post: 'Post',
+  Grocery: 'Grocery'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +402,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "post"
+    modelProps: "user" | "post" | "grocery"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -553,6 +554,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Grocery: {
+      payload: Prisma.$GroceryPayload<ExtArgs>
+      fields: Prisma.GroceryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.GroceryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.GroceryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        findFirst: {
+          args: Prisma.GroceryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.GroceryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        findMany: {
+          args: Prisma.GroceryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>[]
+        }
+        create: {
+          args: Prisma.GroceryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        createMany: {
+          args: Prisma.GroceryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.GroceryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>[]
+        }
+        delete: {
+          args: Prisma.GroceryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        update: {
+          args: Prisma.GroceryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        deleteMany: {
+          args: Prisma.GroceryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.GroceryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.GroceryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>[]
+        }
+        upsert: {
+          args: Prisma.GroceryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$GroceryPayload>
+        }
+        aggregate: {
+          args: Prisma.GroceryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateGrocery>
+        }
+        groupBy: {
+          args: Prisma.GroceryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GroceryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.GroceryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.GroceryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -610,6 +685,15 @@ export const PostScalarFieldEnum = {
 } as const
 
 export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+
+
+export const GroceryScalarFieldEnum = {
+  id: 'id',
+  completed: 'completed',
+  name: 'name'
+} as const
+
+export type GroceryScalarFieldEnum = (typeof GroceryScalarFieldEnum)[keyof typeof GroceryScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -787,6 +871,7 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   post?: Prisma.PostOmit
+  grocery?: Prisma.GroceryOmit
 }
 
 /* Types for Logging */

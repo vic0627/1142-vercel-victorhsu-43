@@ -51,3 +51,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type Post = Prisma.PostModel
+/**
+ * Model Grocery
+ * 
+ */
+export type Grocery = Prisma.GroceryModel
