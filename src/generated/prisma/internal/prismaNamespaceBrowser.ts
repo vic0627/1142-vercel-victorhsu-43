@@ -53,7 +53,19 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   User: 'User',
   Post: 'Post',
-  Grocery: 'Grocery'
+  Grocery: 'Grocery',
+  Blog_xx: 'Blog_xx',
+  Blog2_xx: 'Blog2_xx',
+  Category2_43: 'Category2_43',
+  Shop2_43: 'Shop2_43',
+  Category_xx: 'Category_xx',
+  Shop_xx: 'Shop_xx',
+  Product: 'Product',
+  Favorite: 'Favorite',
+  Review: 'Review',
+  Cart: 'Cart',
+  CartItem: 'CartItem',
+  Order: 'Order'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -94,11 +106,170 @@ export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof Post
 
 export const GroceryScalarFieldEnum = {
   id: 'id',
-  completed: 'completed',
-  name: 'name'
+  name: 'name',
+  completed: 'completed'
 } as const
 
 export type GroceryScalarFieldEnum = (typeof GroceryScalarFieldEnum)[keyof typeof GroceryScalarFieldEnum]
+
+
+export const Blog_xxScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  descrip: 'descrip',
+  category: 'category',
+  img: 'img',
+  remote_img: 'remote_img'
+} as const
+
+export type Blog_xxScalarFieldEnum = (typeof Blog_xxScalarFieldEnum)[keyof typeof Blog_xxScalarFieldEnum]
+
+
+export const Blog2_xxScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  descrip: 'descrip',
+  category: 'category',
+  featured: 'featured',
+  img: 'img',
+  remote_img: 'remote_img'
+} as const
+
+export type Blog2_xxScalarFieldEnum = (typeof Blog2_xxScalarFieldEnum)[keyof typeof Blog2_xxScalarFieldEnum]
+
+
+export const Category2_43ScalarFieldEnum = {
+  cid: 'cid',
+  cname: 'cname',
+  size: 'size',
+  image_url: 'image_url',
+  remote_image_url: 'remote_image_url',
+  link_url: 'link_url'
+} as const
+
+export type Category2_43ScalarFieldEnum = (typeof Category2_43ScalarFieldEnum)[keyof typeof Category2_43ScalarFieldEnum]
+
+
+export const Shop2_43ScalarFieldEnum = {
+  pid: 'pid',
+  pname: 'pname',
+  cat_id: 'cat_id',
+  price: 'price',
+  img_url: 'img_url',
+  remote_img_url: 'remote_img_url'
+} as const
+
+export type Shop2_43ScalarFieldEnum = (typeof Shop2_43ScalarFieldEnum)[keyof typeof Shop2_43ScalarFieldEnum]
+
+
+export const Category_xxScalarFieldEnum = {
+  cid: 'cid',
+  cname: 'cname',
+  size: 'size',
+  image_url: 'image_url',
+  remote_image_url: 'remote_image_url',
+  link_url: 'link_url'
+} as const
+
+export type Category_xxScalarFieldEnum = (typeof Category_xxScalarFieldEnum)[keyof typeof Category_xxScalarFieldEnum]
+
+
+export const Shop_xxScalarFieldEnum = {
+  pid: 'pid',
+  pname: 'pname',
+  cat_id: 'cat_id',
+  price: 'price',
+  img_url: 'img_url',
+  remote_img_url: 'remote_img_url'
+} as const
+
+export type Shop_xxScalarFieldEnum = (typeof Shop_xxScalarFieldEnum)[keyof typeof Shop_xxScalarFieldEnum]
+
+
+export const ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  company: 'company',
+  description: 'description',
+  featured: 'featured',
+  image: 'image',
+  price: 'price',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  clerkId: 'clerkId'
+} as const
+
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const FavoriteScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FavoriteScalarFieldEnum = (typeof FavoriteScalarFieldEnum)[keyof typeof FavoriteScalarFieldEnum]
+
+
+export const ReviewScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  rating: 'rating',
+  comment: 'comment',
+  authorName: 'authorName',
+  authorImageUrl: 'authorImageUrl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  productId: 'productId'
+} as const
+
+export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
+
+
+export const CartScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  numItemsInCart: 'numItemsInCart',
+  cartTotal: 'cartTotal',
+  shipping: 'shipping',
+  tax: 'tax',
+  taxRate: 'taxRate',
+  orderTotal: 'orderTotal',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CartScalarFieldEnum = (typeof CartScalarFieldEnum)[keyof typeof CartScalarFieldEnum]
+
+
+export const CartItemScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  cartId: 'cartId',
+  amount: 'amount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CartItemScalarFieldEnum = (typeof CartItemScalarFieldEnum)[keyof typeof CartItemScalarFieldEnum]
+
+
+export const OrderScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  products: 'products',
+  orderTotal: 'orderTotal',
+  tax: 'tax',
+  shipping: 'shipping',
+  email: 'email',
+  isPaid: 'isPaid',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum]
 
 
 export const SortOrder = {

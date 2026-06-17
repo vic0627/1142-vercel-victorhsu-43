@@ -32,3 +32,63 @@ export type Post = Prisma.PostModel
  * 
  */
 export type Grocery = Prisma.GroceryModel
+/**
+ * Model Blog_xx
+ * 
+ */
+export type Blog_xx = Prisma.Blog_xxModel
+/**
+ * Model Blog2_xx
+ * 
+ */
+export type Blog2_xx = Prisma.Blog2_xxModel
+/**
+ * Model Category2_43
+ * 
+ */
+export type Category2_43 = Prisma.Category2_43Model
+/**
+ * Model Shop2_43
+ * 
+ */
+export type Shop2_43 = Prisma.Shop2_43Model
+/**
+ * Model Category_xx
+ * 
+ */
+export type Category_xx = Prisma.Category_xxModel
+/**
+ * Model Shop_xx
+ * 
+ */
+export type Shop_xx = Prisma.Shop_xxModel
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model Favorite
+ * 
+ */
+export type Favorite = Prisma.FavoriteModel
+/**
+ * Model Review
+ * 
+ */
+export type Review = Prisma.ReviewModel
+/**
+ * Model Cart
+ * 
+ */
+export type Cart = Prisma.CartModel
+/**
+ * Model CartItem
+ * 
+ */
+export type CartItem = Prisma.CartItemModel
+/**
+ * Model Order
+ * 
+ */
+export type Order = Prisma.OrderModel

@@ -20,64 +20,46 @@ export type GroceryModel = runtime.Types.Result.DefaultSelection<Prisma.$Grocery
 
 export type AggregateGrocery = {
   _count: GroceryCountAggregateOutputType | null
-  _avg: GroceryAvgAggregateOutputType | null
-  _sum: GrocerySumAggregateOutputType | null
   _min: GroceryMinAggregateOutputType | null
   _max: GroceryMaxAggregateOutputType | null
 }
 
-export type GroceryAvgAggregateOutputType = {
-  id: number | null
-}
-
-export type GrocerySumAggregateOutputType = {
-  id: number | null
-}
-
 export type GroceryMinAggregateOutputType = {
-  id: number | null
-  completed: boolean | null
+  id: string | null
   name: string | null
+  completed: boolean | null
 }
 
 export type GroceryMaxAggregateOutputType = {
-  id: number | null
-  completed: boolean | null
+  id: string | null
   name: string | null
+  completed: boolean | null
 }
 
 export type GroceryCountAggregateOutputType = {
   id: number
-  completed: number
   name: number
+  completed: number
   _all: number
 }
 
 
-export type GroceryAvgAggregateInputType = {
-  id?: true
-}
-
-export type GrocerySumAggregateInputType = {
-  id?: true
-}
-
 export type GroceryMinAggregateInputType = {
   id?: true
-  completed?: true
   name?: true
+  completed?: true
 }
 
 export type GroceryMaxAggregateInputType = {
   id?: true
-  completed?: true
   name?: true
+  completed?: true
 }
 
 export type GroceryCountAggregateInputType = {
   id?: true
-  completed?: true
   name?: true
+  completed?: true
   _all?: true
 }
 
@@ -119,18 +101,6 @@ export type GroceryAggregateArgs<ExtArgs extends runtime.Types.Extensions.Intern
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Select which fields to average
-  **/
-  _avg?: GroceryAvgAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
-   * Select which fields to sum
-  **/
-  _sum?: GrocerySumAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
    * Select which fields to find the minimum value
   **/
   _min?: GroceryMinAggregateInputType
@@ -161,19 +131,15 @@ export type GroceryGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   _count?: GroceryCountAggregateInputType | true
-  _avg?: GroceryAvgAggregateInputType
-  _sum?: GrocerySumAggregateInputType
   _min?: GroceryMinAggregateInputType
   _max?: GroceryMaxAggregateInputType
 }
 
 export type GroceryGroupByOutputType = {
-  id: number
-  completed: boolean
+  id: string
   name: string
+  completed: boolean
   _count: GroceryCountAggregateOutputType | null
-  _avg: GroceryAvgAggregateOutputType | null
-  _sum: GrocerySumAggregateOutputType | null
   _min: GroceryMinAggregateOutputType | null
   _max: GroceryMaxAggregateOutputType | null
 }
@@ -197,146 +163,139 @@ export type GroceryWhereInput = {
   AND?: Prisma.GroceryWhereInput | Prisma.GroceryWhereInput[]
   OR?: Prisma.GroceryWhereInput[]
   NOT?: Prisma.GroceryWhereInput | Prisma.GroceryWhereInput[]
-  id?: Prisma.IntFilter<"Grocery"> | number
-  completed?: Prisma.BoolFilter<"Grocery"> | boolean
+  id?: Prisma.StringFilter<"Grocery"> | string
   name?: Prisma.StringFilter<"Grocery"> | string
+  completed?: Prisma.BoolFilter<"Grocery"> | boolean
 }
 
 export type GroceryOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  completed?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  completed?: Prisma.SortOrder
 }
 
 export type GroceryWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
+  id?: string
   AND?: Prisma.GroceryWhereInput | Prisma.GroceryWhereInput[]
   OR?: Prisma.GroceryWhereInput[]
   NOT?: Prisma.GroceryWhereInput | Prisma.GroceryWhereInput[]
-  completed?: Prisma.BoolFilter<"Grocery"> | boolean
   name?: Prisma.StringFilter<"Grocery"> | string
+  completed?: Prisma.BoolFilter<"Grocery"> | boolean
 }, "id">
 
 export type GroceryOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  completed?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  completed?: Prisma.SortOrder
   _count?: Prisma.GroceryCountOrderByAggregateInput
-  _avg?: Prisma.GroceryAvgOrderByAggregateInput
   _max?: Prisma.GroceryMaxOrderByAggregateInput
   _min?: Prisma.GroceryMinOrderByAggregateInput
-  _sum?: Prisma.GrocerySumOrderByAggregateInput
 }
 
 export type GroceryScalarWhereWithAggregatesInput = {
   AND?: Prisma.GroceryScalarWhereWithAggregatesInput | Prisma.GroceryScalarWhereWithAggregatesInput[]
   OR?: Prisma.GroceryScalarWhereWithAggregatesInput[]
   NOT?: Prisma.GroceryScalarWhereWithAggregatesInput | Prisma.GroceryScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"Grocery"> | number
-  completed?: Prisma.BoolWithAggregatesFilter<"Grocery"> | boolean
+  id?: Prisma.StringWithAggregatesFilter<"Grocery"> | string
   name?: Prisma.StringWithAggregatesFilter<"Grocery"> | string
+  completed?: Prisma.BoolWithAggregatesFilter<"Grocery"> | boolean
 }
 
 export type GroceryCreateInput = {
-  completed?: boolean
+  id?: string
   name: string
+  completed?: boolean
 }
 
 export type GroceryUncheckedCreateInput = {
-  id?: number
-  completed?: boolean
+  id?: string
   name: string
+  completed?: boolean
 }
 
 export type GroceryUpdateInput = {
-  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type GroceryUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type GroceryCreateManyInput = {
-  id?: number
-  completed?: boolean
+  id?: string
   name: string
+  completed?: boolean
 }
 
 export type GroceryUpdateManyMutationInput = {
-  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type GroceryUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  completed?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type GroceryCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  completed?: Prisma.SortOrder
   name?: Prisma.SortOrder
-}
-
-export type GroceryAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
+  completed?: Prisma.SortOrder
 }
 
 export type GroceryMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  completed?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  completed?: Prisma.SortOrder
 }
 
 export type GroceryMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  completed?: Prisma.SortOrder
   name?: Prisma.SortOrder
-}
-
-export type GrocerySumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
+  completed?: Prisma.SortOrder
 }
 
 
 
 export type GrocerySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  completed?: boolean
   name?: boolean
+  completed?: boolean
 }, ExtArgs["result"]["grocery"]>
 
 export type GrocerySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  completed?: boolean
   name?: boolean
+  completed?: boolean
 }, ExtArgs["result"]["grocery"]>
 
 export type GrocerySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  completed?: boolean
   name?: boolean
+  completed?: boolean
 }, ExtArgs["result"]["grocery"]>
 
 export type GrocerySelectScalar = {
   id?: boolean
-  completed?: boolean
   name?: boolean
+  completed?: boolean
 }
 
-export type GroceryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "completed" | "name", ExtArgs["result"]["grocery"]>
+export type GroceryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "completed", ExtArgs["result"]["grocery"]>
 
 export type $GroceryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Grocery"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
-    completed: boolean
+    id: string
     name: string
+    completed: boolean
   }, ExtArgs["result"]["grocery"]>
   composites: {}
 }
@@ -760,9 +719,9 @@ export interface Prisma__GroceryClient<T, Null = never, ExtArgs extends runtime.
  * Fields of the Grocery model
  */
 export interface GroceryFieldRefs {
-  readonly id: Prisma.FieldRef<"Grocery", 'Int'>
-  readonly completed: Prisma.FieldRef<"Grocery", 'Boolean'>
+  readonly id: Prisma.FieldRef<"Grocery", 'String'>
   readonly name: Prisma.FieldRef<"Grocery", 'String'>
+  readonly completed: Prisma.FieldRef<"Grocery", 'Boolean'>
 }
     
 

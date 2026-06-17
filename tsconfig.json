@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2023",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -28,7 +28,14 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/app/(demo)/grocery_xx/_components/SingleItem_xx.jsx",
+    "src/app/(demo)/grocery_xx/page.jsx",
+    "src/app/(demo)/grocery_xx/_components/Form_xx.jsx",
+    "src/app/(demo)/grocery_xx/_components/Items_xx.jsx",
+    "src/app/(demo)/grocery_db_xx/_components/Form_xx.jsx",
+    "src/app/(demo)/grocery_db_xx/_components/Items_xx.jsx",
+    "src/app/(demo)/grocery_db_xx/_components/SingleItem_xx.jsx"
   ],
   "exclude": ["node_modules"]
 }
